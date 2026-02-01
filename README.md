@@ -19,4 +19,4 @@ Tests have been added to ensure the code is computing properly.
 
 Created by Carleton Bonomo 🪨 “Climb high, stay strong!”
 
-![CI Status](https://github.com/bonomocd-ctrl/Rock-Climbing-Tracker/.github/workflows/tests.yml/badge.svg)
+![C++ doctest](https://github.com/bonomocd-ctrl/Rock-Climbing-Tracker/.github/workflows/tests.yml/badge.svg)
