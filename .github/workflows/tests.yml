@@ -29,6 +29,3 @@ jobs:
       shell: cmd
       run: |
         tests.exe
-      shell: cmd
-      run: |
-        tests.exe
