@@ -25,7 +25,9 @@ jobs:
         REM /std:c++17 standard
 
         cl /nologo /EHsc /std:c++17 /D RUN_TESTS main.cpp /FE:tests.exe
+
+        popd
     - name: Run tests
       shell: cmd
       run: |
-        tests.exe
+        "%GITHUB_WORKSPACE%\build\tests.exe"
