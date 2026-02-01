@@ -17,17 +17,35 @@ jobs:
     - name: Set up Visual Studio (MSVC)
       uses: ilammy/msvc-dev-cmd@v1
 
+    # Step 3: Verify MSVC setup (debugging step)
+    - name: Verify MSVC setup
+      shell: cmd
+      run: |
+        where cl
+        cl
+
+    # Step 4: Ensure the build directory exists and build the project
     - name: Build tests
       shell: cmd
       run: |
-        REM Compile Rock-Climbing-Tracker.cpp in TEST MODE (RUN_TESTS defined)
-        REM /EHsc = standar C++ exception handling
-        REM /std:c++17 standard
+        REM Ensure the build directory exists
+        if not exist "%GITHUB_WORKSPACE%\build" mkdir "%GITHUB_WORKSPACE%\build"
+        
+        REM Change to the build directory
+        pushd "%GITHUB_WORKSPACE%\build"
+        
+        REM Compile the project to produce Rock-Climbing-Tracker.exe
+        cl /nologo /EHsc /std:c++17 /D RUN_TESTS "%GITHUB_WORKSPACE%\Rock-Climbing-Tracker.cpp" /Fe:Rock-Climbing-Tracker.exe
 
-        cl /nologo /EHsc /std:c++17 /D RUN_TESTS Rock-Climbing-Tracker.cpp /FE:Rock-Climbing-Tracker.exe
+        REM List the contents of the build directory for debugging
+        dir
 
-     
+        REM Return to the original directory
+        popd
+
+    # Step 5: Run the compiled tests
     - name: Run tests
       shell: cmd
       run: |
-        Rock-Climbing-Tracker.exe
+        REM Run the Rock-Climbing-Tracker.exe from the build directory
+        "%GITHUB_WORKSPACE%\build\Rock-Climbing-Tracker.exe"
