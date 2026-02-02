@@ -17,14 +17,7 @@ jobs:
     - name: Set up Visual Studio (MSVC)
       uses: ilammy/msvc-dev-cmd@v1
 
-    # Step 3: Verify MSVC setup (debugging step)
-    - name: Verify MSVC setup
-      shell: cmd
-      run: |
-        where cl
-        cl
-
-    # Step 4: Ensure the build directory exists and build the project
+    # Step 3: Ensure the build directory exists and build the project
     - name: Build tests
       shell: cmd
       run: |
@@ -43,7 +36,7 @@ jobs:
         REM Return to the original directory
         popd
 
-    # Step 5: Run the compiled tests
+    # Step 4: Run the compiled tests
     - name: Run tests
       shell: cmd
       run: |
