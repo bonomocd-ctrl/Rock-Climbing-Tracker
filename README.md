@@ -18,6 +18,5 @@ Tests have been added to ensure the code is computing properly.
 🙌 Author
 
 Created by Carleton Bonomo 🪨 “Climb high, stay strong!”
-
-![C++ Doctest CI](https://github.com/bonomocd-ctrl/Rock-Climbing-Tracker/actions/workflows/test.yml/badge.svg)
+[![C++ doctest](https://github.com/bonomocd-ctrl/Rock-Climbing-Tracker/actions/workflows/tests.yml/badge.svg)](https://github.com/bonomocd-ctrl/Rock-Climbing-Tracker/actions/workflows/tests.yml)
 
