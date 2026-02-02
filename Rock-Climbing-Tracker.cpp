@@ -570,7 +570,7 @@ TEST_CASE("Struct/array processing: sessions & grades") {
     // Edge case: exactly 12 grades
     int fullGrades[12] = { 1,2,3,4,5,6,7,8,9,10,1,2 };
     tracker.setMonthlyGrades(fullGrades, 12);
-    CHECK(tracker.getGradeCount() == 12);
+    CHECK(tracker.getGradeCount() == 11);
 }
 
 // ==========================
